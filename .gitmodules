@@ -1,0 +1,3 @@
+[submodule "submodule/vegas49"]
+	path = submodule/vegas49
+	url = https://github.com/mattmutt/vegasjs49
