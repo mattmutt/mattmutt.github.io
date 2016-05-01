@@ -1,10 +1,308 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--
+
+introduction to myself! 2016-05-02
+-->
+
+<html class="mattmutt">
 <head>
-    <meta charset="UTF-8">
-    <title>Attraction...</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title>Unattractive Entropy</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <link href="//fonts.googleapis.com/css?family=Muli" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="app/shattered-glass/styles/style.css"/>
+    <style>
+
+        HTML, BODY {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        #background {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-blend-mode: multiply;
+            animation: bg-art 10s infinite linear;
+        }
+
+        /* jump across interesting art */
+        @-webkit-keyframes bg-art {
+
+            0% {
+                background-image: url("image/home/background-rotation/new_york_ruins_by_jonasdero-d35covg.jpg");
+            }
+
+            33% {
+                background-image: url("image/home/background-rotation/forest_by_jungpark-d3jridt.jpg");
+            }
+
+            66% {
+                background-image: url("image/home/background-rotation/iroshi_by_jonasdero-d3bt1s1.jpg");
+            }
+
+            100% {
+                background-image: url("image/home/background-rotation/iroshi_by_jonasdero-d3bt1s1.jpg");
+            }
+        }
+
+        @keyframes bg-art {
+            0% {
+                background-image: url("image/home/background-rotation/new_york_ruins_by_jonasdero-d35covg.jpg");
+            }
+
+            33% {
+                background-image: url("image/home/background-rotation/forest_by_jungpark-d3jridt.jpg");
+            }
+
+            66% {
+                background-image: url("image/home/background-rotation/iroshi_by_jonasdero-d3bt1s1.jpg");
+            }
+
+                        100% {
+                background-image: url("image/home/background-rotation/iroshi_by_jonasdero-d3bt1s1.jpg");
+            }
+
+
+        }
+
+        #container {
+            position: absolute;
+            mix-blend-mode: hard-light;
+        }
+
+        #introduction {
+            transition: background-color 5s ease;
+            background-color: rgba(0, 0, 0, .8);
+
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            /*mix-blend-mode: luminosity;*/
+        }
+
+        #introduction.transition-display {
+            transition: background-color 5s ease;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        TEXT {
+            paint-order: stroke;
+        }
+
+        .text--line {
+            font-size: 10rem;
+        }
+
+        .text--line2 {
+            font-size: 6rem;
+        }
+
+        .text--line3 {
+            font-size: 4rem;
+            font-style: italic;
+        }
+
+        SVG {
+            position: absolute;
+            width: inherit;
+            height: inherit;
+        }
+
+        .text-copy {
+            /*ref fill: url(#mattGradient1);*/
+
+            stroke: #fff;
+            stroke-dasharray: 17% 28%;
+            xstroke-width: 13px;
+            stroke-width: 2.5rem;
+            stroke-opacity: 1;
+
+            -webkit-animation: stroke-offset 80s infinite linear;
+            animation: stroke-offset 80s infinite linear;
+        }
+
+        .text-copy:nth-child(1) {
+            stroke: #360745;
+            stroke-opacity: 0.5;
+            stroke-dashoffset: 7%;
+        }
+
+        .text-copy:nth-child(2) {
+            stroke: #D61C59;
+            stroke-opacity: 0.5;
+            stroke-dashoffset: 14%;
+        }
+
+        .text-copy:nth-child(3) {
+            stroke: #E7D84B;
+            stroke-opacity: 0.5;
+            stroke-dashoffset: 21%;
+        }
+
+        .text-copy:nth-child(4) {
+            stroke: #EFEAC5;
+            stroke-opacity: 0.5;
+            stroke-dashoffset: 28%;
+        }
+
+        .text-copy:nth-child(5) {
+            /*stroke: #1B8798;*/
+            /*stroke-opacity: 0.65;*/
+
+            stroke: #004;
+            stroke-opacity: 0.75;
+
+            stroke-dashoffset: 85%;
+        }
+
+        @-webkit-keyframes stroke-offset {
+            50% {
+                stroke-dashoffset: 35%;
+                stroke-dasharray: 0 87.5%;
+            }
+        }
+
+        @keyframes stroke-offset {
+            50% {
+                stroke-dashoffset: 35%;
+                stroke-dasharray: 0 87.5%;
+            }
+        }
+
+
+    </style>
+
+
+    <!-- libraries -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r76/three.min.js"></script>
+
+    <script src="//mrdoob.github.com/three.js/examples/js/shaders/CopyShader.js"></script>
+
+    <!-- post processing -->
+    <script src="//mrdoob.github.com/three.js/examples/js/postprocessing/EffectComposer.js"></script>
+    <script src="//mrdoob.github.com/three.js/examples/js/postprocessing/RenderPass.js"></script>
+    <script src="//mrdoob.github.com/three.js/examples/js/postprocessing/ShaderPass.js"></script>
+    <script src="//mrdoob.github.com/three.js/examples/js/Detector.js"></script>
+
+
+    <script src="app/shattered-glass/typescripts/ShatteredStainedGlass.js"></script>
+    <script src="app/shattered-glass/typescripts/app.js"></script>
+
+    <script>
+
+        window.addEventListener("DOMContentLoaded", function() {
+
+            function toggleTriangleMotion(state) {
+                var glContainerNode = document.querySelector("#introduction");
+                glContainerNode.classList.toggle("transition-display", state);
+            }
+
+            // trigger fade
+            window.requestAnimationFrame(function() {
+                toggleTriangleMotion(true);
+            });
+
+            // alternate showing or not of triangles
+            window.setInterval(function() {
+                var s = !(Date.now() % 2) ? true : false;
+                toggleTriangleMotion(s);
+            }, 10000);
+
+        });
+
+
+    </script>
+
 </head>
+
 <body>
+
+<div id="background"></div>
+
+<div id="container"></div>
+
+<section id="introduction">
+
+    <div>
+        <svg viewBox="0 0 800 800">
+
+            <defs>
+                <linearGradient id="mattGradient1" x1="0" x2="0" y1="0" y2="1">
+                    <stop class="gradient1-stop1" offset="0%"/>
+                    <stop class="gradient1-stop2" offset="50%"/>
+                    <stop class="gradient1-stop3" offset="100%"/>
+                </linearGradient>
+                <linearGradient id="mattGradient2" x1="0" x2="0" y1="0" y2="1">
+                    <stop class="gradient2-stop1" offset="0%"/>
+                    <stop class="gradient2-stop2" offset="100%"/>
+                </linearGradient>
+
+            </defs>
+
+            <symbol id="s-text">
+                <text text-anchor="middle" x="50%" y="35%" class="text--line" fill="url(#mattGradient1)">
+                    Matt
+                </text>
+
+                <text text-anchor="middle" x="50%" y="58%" class="text--line2" fill="url(#mattGradient2)">
+                    UX Architect
+                </text>
+
+                <text text-anchor="middle" x="50%" y="68%" class="text--line3" fill="url(#mattGradient2)">
+                    Las Vegas
+                </text>
+            </symbol>
+            <style type="text/css">
+
+                .gradient1-stop1 {
+                    stop-color: #08f;
+                    stop-opacity: 0.8;
+                }
+
+                .gradient1-stop2 {
+                    stop-color: #ddd;
+                    stop-opacity: 0.8;
+                }
+
+                .gradient1-stop3 {
+                    stop-color: #00f;
+                    stop-opacity: 0.9;
+                }
+
+                /* ---------- */
+
+                .gradient2-stop1 {
+                    stop-color: #ff3;
+                }
+
+                .gradient2-stop2 {
+                    stop-color: #a22;
+                    stop-opacity: 0.5;
+                }
+
+
+            </style>
+
+            <g class="g-ants">
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+                <use xlink:href="#s-text" class="text-copy"></use>
+            </g>
+
+
+        </svg>
+
+    </div>
+</section>
+
 
 </body>
 </html>
+
