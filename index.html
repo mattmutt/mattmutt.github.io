@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 
-introduction to myself! 2016-05-02
+Just a visual introduction to Myself! 2016-05-02
 -->
 
 <html class="mattmutt">
@@ -13,169 +13,7 @@ introduction to myself! 2016-05-02
 
     <link href="//fonts.googleapis.com/css?family=Muli" rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="app/shattered-glass/styles/style.css"/>
-    <style>
-
-        HTML, BODY {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-        }
-
-        #background {
-            position: absolute;
-            width: 100vw;
-            height: 100vh;
-            background-size: cover;
-            background-blend-mode: multiply;
-            animation: bg-art 10s infinite linear;
-        }
-
-        /* jump across interesting art */
-        @-webkit-keyframes bg-art {
-
-            0% {
-                background-image: url("image/home/background-rotation/new_york_ruins_by_jonasdero-d35covg.jpg");
-            }
-
-            33% {
-                background-image: url("image/home/background-rotation/forest_by_jungpark-d3jridt.jpg");
-            }
-
-            66% {
-                background-image: url("image/home/background-rotation/iroshi_by_jonasdero-d3bt1s1.jpg");
-            }
-
-            100% {
-                background-image: url("image/home/background-rotation/iroshi_by_jonasdero-d3bt1s1.jpg");
-            }
-        }
-
-        @keyframes bg-art {
-            0% {
-                background-image: url("image/home/background-rotation/new_york_ruins_by_jonasdero-d35covg.jpg");
-            }
-
-            33% {
-                background-image: url("image/home/background-rotation/forest_by_jungpark-d3jridt.jpg");
-            }
-
-            66% {
-                background-image: url("image/home/background-rotation/iroshi_by_jonasdero-d3bt1s1.jpg");
-            }
-
-                        100% {
-                background-image: url("image/home/background-rotation/iroshi_by_jonasdero-d3bt1s1.jpg");
-            }
-
-
-        }
-
-        #container {
-            position: absolute;
-            mix-blend-mode: hard-light;
-        }
-
-        #introduction {
-            transition: background-color 5s ease;
-            background-color: rgba(0, 0, 0, .8);
-
-            position: absolute;
-            width: 100vw;
-            height: 100vh;
-            /*mix-blend-mode: luminosity;*/
-        }
-
-        #introduction.transition-display {
-            transition: background-color 5s ease;
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-
-        TEXT {
-            paint-order: stroke;
-        }
-
-        .text--line {
-            font-size: 10rem;
-        }
-
-        .text--line2 {
-            font-size: 6rem;
-        }
-
-        .text--line3 {
-            font-size: 4rem;
-            font-style: italic;
-        }
-
-        SVG {
-            position: absolute;
-            width: inherit;
-            height: inherit;
-        }
-
-        .text-copy {
-            /*ref fill: url(#mattGradient1);*/
-
-            stroke: #fff;
-            stroke-dasharray: 17% 28%;
-            xstroke-width: 13px;
-            stroke-width: 2.5rem;
-            stroke-opacity: 1;
-
-            -webkit-animation: stroke-offset 80s infinite linear;
-            animation: stroke-offset 80s infinite linear;
-        }
-
-        .text-copy:nth-child(1) {
-            stroke: #360745;
-            stroke-opacity: 0.5;
-            stroke-dashoffset: 7%;
-        }
-
-        .text-copy:nth-child(2) {
-            stroke: #D61C59;
-            stroke-opacity: 0.5;
-            stroke-dashoffset: 14%;
-        }
-
-        .text-copy:nth-child(3) {
-            stroke: #E7D84B;
-            stroke-opacity: 0.5;
-            stroke-dashoffset: 21%;
-        }
-
-        .text-copy:nth-child(4) {
-            stroke: #EFEAC5;
-            stroke-opacity: 0.5;
-            stroke-dashoffset: 28%;
-        }
-
-        .text-copy:nth-child(5) {
-            /*stroke: #1B8798;*/
-            /*stroke-opacity: 0.65;*/
-
-            stroke: #004;
-            stroke-opacity: 0.75;
-
-            stroke-dashoffset: 85%;
-        }
-
-        @-webkit-keyframes stroke-offset {
-            50% {
-                stroke-dashoffset: 35%;
-                stroke-dasharray: 0 87.5%;
-            }
-        }
-
-        @keyframes stroke-offset {
-            50% {
-                stroke-dashoffset: 35%;
-                stroke-dasharray: 0 87.5%;
-            }
-        }
-
-
-    </style>
+    <link rel="stylesheet" href="styles/application.css"/>
 
 
     <!-- libraries -->
@@ -190,33 +28,10 @@ introduction to myself! 2016-05-02
     <script src="//mrdoob.github.com/three.js/examples/js/Detector.js"></script>
 
 
+    <!-- some WebGL triangles I rendered -->
     <script src="app/shattered-glass/typescripts/ShatteredStainedGlass.js"></script>
     <script src="app/shattered-glass/typescripts/app.js"></script>
-
-    <script>
-
-        window.addEventListener("DOMContentLoaded", function() {
-
-            function toggleTriangleMotion(state) {
-                var glContainerNode = document.querySelector("#introduction");
-                glContainerNode.classList.toggle("transition-display", state);
-            }
-
-            // trigger fade
-            window.requestAnimationFrame(function() {
-                toggleTriangleMotion(true);
-            });
-
-            // alternate showing or not of triangles
-            window.setInterval(function() {
-                var s = !(Date.now() % 2) ? true : false;
-                toggleTriangleMotion(s);
-            }, 10000);
-
-        });
-
-
-    </script>
+    <script src="app/home.js"></script>
 
 </head>
 
@@ -241,6 +56,12 @@ introduction to myself! 2016-05-02
                     <stop class="gradient2-stop1" offset="0%"/>
                     <stop class="gradient2-stop2" offset="100%"/>
                 </linearGradient>
+                <linearGradient id="mattGradient3" x1="0" x2="0" y1="0" y2="1">
+                    <stop class="gradient3-stop1" offset="0%"/>
+                    <stop class="gradient3-stop2" offset="100%"/>
+                </linearGradient>
+
+
 
             </defs>
 
@@ -249,11 +70,10 @@ introduction to myself! 2016-05-02
                     Matt
                 </text>
 
-                <text text-anchor="middle" x="50%" y="58%" class="text--line2" fill="url(#mattGradient2)">
-                    UX Architect
+                <text id="description" text-anchor="middle" x="50%" y="58%" class="text--line2" fill="url(#mattGradient2)">
                 </text>
 
-                <text text-anchor="middle" x="50%" y="68%" class="text--line3" fill="url(#mattGradient2)">
+                <text text-anchor="middle" x="50%" y="68%" class="text--line3" fill="url(#mattGradient3)">
                     Las Vegas
                 </text>
             </symbol>
@@ -285,6 +105,19 @@ introduction to myself! 2016-05-02
                     stop-opacity: 0.5;
                 }
 
+                                /* ---------- */
+
+                .gradient3-stop1 {
+                    stop-color: #dde;
+                }
+
+                .gradient3-stop2 {
+                    stop-color: #ccd;
+                    stop-opacity: 0.5;
+                }
+
+
+
 
             </style>
 
@@ -305,4 +138,3 @@ introduction to myself! 2016-05-02
 
 </body>
 </html>
-

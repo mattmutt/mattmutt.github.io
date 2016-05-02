@@ -1,0 +1,28 @@
+{
+  "name": "mattmutt.github.io",
+  "version": "1.0.0",
+  "description": "Matt Intro",
+  "main": "index.html",
+  "author": "Matt",
+  "homepage": "https://github.com/mattmutt/mattmutt.github.io",
+  "dependencies": {
+    "three": "^0.74.0"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "lite-server": "^2.2.0",
+    "typings": "^0.8.1",
+    "node-sass": "^3.4.2"
+  },
+  "scripts": {
+    "lite": "lite-server",
+    "postinstall": "typings install",
+    "typings": "typings",
+    "watch": "node node_modules/node-sass/bin/node-sass -w styles/ -o styles/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattmutt/angular2-d3-experiment.git"
+  }
+}
+

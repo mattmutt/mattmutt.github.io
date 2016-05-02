@@ -3,4 +3,3 @@ window.addEventListener("load", function () {
     ssg.initialize("container");
     ssg.animate();
 });
-//# sourceMappingURL=app.js.map
