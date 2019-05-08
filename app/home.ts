@@ -18,11 +18,12 @@ window.addEventListener("DOMContentLoaded", function () {
 
     // alternate showing or not of triangles
         let descriptionMarqueesList = [
-            "UX Architect",
+            "Architect",
             "Mobile",
+            "Usability",
             "Performance",
             "Web Security",
-            "Design // Video",
+            "Design",
             "Database"
         ];
 

@@ -11,11 +11,13 @@ window.addEventListener("DOMContentLoaded", function () {
         toggleTriangleMotion(s);
     }, 20000);
     var descriptionMarqueesList = [
-        "UX Architect",
+        "Architect",
         "Mobile",
+        "Usability",
+        "Remodeling",
         "Performance",
         "Web Security",
-        "Design // Video",
+        "Design",
         "Database"
     ];
     function updateDescription(index) {

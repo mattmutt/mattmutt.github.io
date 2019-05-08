@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <!--
 
-Just a visual introduction to Myself! 2016-05-02
+Just a visual introduction to Myself! 2019-05-10
 -->
 
 <html class="mattmutt">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <title>Unattractive Entropy</title>
+    <title>Event Horizon :: mattmutt</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
     <link href="//fonts.googleapis.com/css?family=Muli" rel='stylesheet' type='text/css'>
@@ -25,7 +25,8 @@ Just a visual introduction to Myself! 2016-05-02
     <script src="//mrdoob.github.com/three.js/examples/js/postprocessing/EffectComposer.js"></script>
     <script src="//mrdoob.github.com/three.js/examples/js/postprocessing/RenderPass.js"></script>
     <script src="//mrdoob.github.com/three.js/examples/js/postprocessing/ShaderPass.js"></script>
-    <script src="//mrdoob.github.com/three.js/examples/js/Detector.js"></script>
+<!--    <script src="//mrdoob.github.com/three.js/examples/js/Detector.js"></script>-->
+    <script src="//stemkoski.github.io/Three.js/js/Detector.js"></script>
 
 
     <!-- some WebGL triangles I rendered -->
@@ -60,22 +61,36 @@ Just a visual introduction to Myself! 2016-05-02
                     <stop class="gradient3-stop1" offset="0%"/>
                     <stop class="gradient3-stop2" offset="100%"/>
                 </linearGradient>
-
-
+                <linearGradient id="mattGradient4" x1="0" x2="0" y1="0" y2="1">
+                    <stop class="gradient3-stop3" offset="0%"/>
+                    <stop class="gradient3-stop2" offset="50%"/>
+                    <stop class="gradient3-stop1" offset="100%"/>
+                </linearGradient>
 
             </defs>
 
             <symbol id="s-text">
-                <text text-anchor="middle" x="50%" y="35%" class="text--line" fill="url(#mattGradient1)">
+                <text text-anchor="middle" x="50%" y="15%" class="text--line" fill="url(#mattGradient1)">
                     Matt
                 </text>
 
-                <text id="description" text-anchor="middle" x="50%" y="58%" class="text--line2" fill="url(#mattGradient2)">
+                <text id="description" text-anchor="middle" x="50%" y="30%" class="text--line2" fill="url(#mattGradient2)">
                 </text>
 
-                <text text-anchor="middle" x="50%" y="68%" class="text--line3" fill="url(#mattGradient3)">
-                    Las Vegas
+
+                <a href="https://github.com/mattmutt?tab=repositories">
+                <text text-anchor="middle" x="50%" y="40%" class="text--line3" fill="url(#mattGradient3)">
+                    Repos on Github
                 </text>
+                </a>
+
+                <a href="../ngx-card-deck-seed/#/dashboard/dashboard-page/com_company_sample2/deck1">
+                    <text text-anchor="middle" x="50%" y="50%" class="text--line4" fill="url(#mattGradient4)">
+                        ngx-card-deck
+                    </text>
+                </a>
+
+
             </symbol>
             <style type="text/css">
 

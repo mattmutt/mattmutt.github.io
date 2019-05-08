@@ -1,7 +1,14 @@
 HTML, BODY {
   width: 100%;
   height: 100%;
-  margin: 0; }
+  margin: 0;
+  font-family: Metropolis;
+}
+
+@font-face{
+  font-family: Metropolis;
+  src: url("../fonts/metropolis/Metropolis-Regular.woff2") format("woff2");
+}
 
 #background {
   position: absolute;
@@ -26,7 +33,7 @@ HTML, BODY {
     -webkit-filter: grayscale(20%); }
   100% {
     background-image: url("../image/home/background-rotation/iroshi_by_jonasdero-d3bt1s1.jpg");
-    -webkit-filter: grayscale(10%); } }
+    -webkit-filter: grayscale(80%); } }
 
 @keyframes bg-art {
   0% {
@@ -40,7 +47,7 @@ HTML, BODY {
     filter: grayscale(20%); }
   100% {
     background-image: url("../image/home/background-rotation/iroshi_by_jonasdero-d3bt1s1.jpg");
-    filter: grayscale(10%); } }
+    filter: grayscale(80%); } }
 
 #container {
   position: absolute;
@@ -82,19 +89,31 @@ TEXT {
   paint-order: stroke; }
 
 .text--line {
-  font-size: 10rem; }
-
-.text--line2 {
   font-size: 6rem; }
 
+.text--line2 {
+  font-size: 3rem; }
+
 .text--line3 {
-  font-size: 4rem;
-  font-style: italic; }
+  font-size: 2rem;
+  font-style: normal;
+  text-decoration: underline;
+}
+
+.text--line4 {
+  fill: #ffffffcc;
+  font-size: 2rem;
+  font-style: normal;
+  text-decoration: underline;
+}
+
 
 SVG {
   position: absolute;
   width: inherit;
-  height: inherit; }
+  height: inherit;
+  filter: drop-shadow(10px 10px 10px #4ff4ffaa);
+}
 
 .text-copy {
   /*ref fill: url(#mattGradient1);*/
@@ -126,12 +145,15 @@ SVG {
   stroke-opacity: 0.5;
   stroke-dashoffset: 28%; }
 
+/* link */
 .text-copy:nth-child(5) {
   /*stroke: #1B8798;*/
   /*stroke-opacity: 0.65;*/
   stroke: #004;
   stroke-opacity: 0.75;
-  stroke-dashoffset: 85%; }
+  stroke-dashoffset: 85%;
+
+}
 
 @-webkit-keyframes stroke-offset {
   50% {
